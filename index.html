@@ -4,181 +4,270 @@
   <meta charset="UTF-8">
   <title>AmiJoy – Joystick dla Amigi</title>
   <style>
+    /* OGÓLNY STYL */
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
-      background: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a0033, #0d1b40);
+      margin: 0;
+      padding: 0;
+      color: #e0e0e0;
     }
-    img {
-      max-width: 300px;
+
+    a {
+      color: #ff66cc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    a:hover {
+      text-shadow: 0 0 8px #ff66cc;
+    }
+
+    header, section, footer {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(20, 20, 40, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.3),
+                  0 0 25px rgba(0, 255, 255, 0.2);
+    }
+
+    header img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 0 12px #00ffe0);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00ffe0;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px #00ffe0, 0 0 12px #ff00ff;
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 10px 0;
+      text-align: justify;
+    }
+
+    ul {
+      list-style: square;
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
       margin: 20px 0;
     }
+    .photos img {
+      max-width: 250px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #ff00ff, 0 0 25px #00ffe0;
+      transition: transform 0.3s;
+    }
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* FORMULARZ */
     form {
-      margin-top: 20px;
-      background: #fff;
+      background: rgba(40, 10, 70, 0.85);
       padding: 20px;
       border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+      max-width: 500px;
+      margin: 20px auto;
     }
     input, textarea, button {
       width: 100%;
       margin: 8px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      border: 1px solid #6600cc;
       border-radius: 6px;
       font-size: 14px;
+      background: #1a0033;
+      color: #fff;
     }
     button {
-      background: #0078d7;
+      background: linear-gradient(90deg, #ff00cc, #00ffe0);
       color: white;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     button:hover {
-      background: #005fa3;
+      filter: brightness(1.2);
+      box-shadow: 0 0 12px #ff66cc, 0 0 20px #00ffe0;
     }
+
+    /* YOUTUBE */
+    .iframe-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .iframe-container iframe {
+      max-width: 320px;
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      border: 2px solid #6600cc;
+      box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+    }
+
+    /* LINK PDF */
+    .pdf-link {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #00ffe0, #ff00cc);
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 10px 0;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .pdf-link:hover {
+      box-shadow: 0 0 12px #ff00cc, 0 0 20px #00ffe0;
+    }
+
     footer {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #666;
-    }
-    .logo {
-      max-width: 500px; 
-      width: 100%; 
-      height: auto;
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 40px;
+      text-shadow: 0 0 5px #00ffe0;
     }
   </style>
 </head>
 <body>
 
+<header>
+  <img src="amijoy_logo.png" alt="AmiJoy Logo">
+  <p>
+    <strong>AmiJoy</strong> to hobbystyczny projekt stworzony z pasji do retro gamingu i chęci zapewnienia społeczności użytkowników Amigi wysokiej jakości joysticka, jakiego obecnie brakuje na rynku. Łączy klasyczne rozwiązania z nowoczesnymi możliwościami.
+  </p>
+  <p>
+    Joystick hybrydowy <strong>AmiJoy</strong> działa zarówno z klasycznymi komputerami <strong>Amiga</strong> (złącze <strong>DB9</strong>), jak i z nowoczesnym sprzętem (PC, Raspberry Pi, konsole) dzięki portowi <strong>USB-C</strong>. Oferuje klasyczny feeling, solidną konstrukcję i nowoczesną funkcjonalność.
+  </p>
+</header>
 
-  <img src="amijoy_logo.png" alt="AmiJoy Logo" class="logo">
-
-  <p style="max-width: 800px; margin: 20px auto; text-align: justify;">
-     <b>AmiJoy</b> to hobbystyczny projekt stworzony z pasji do retro gamingu i chęci zapewnienia społeczności
-     użytkowników Amigi wysokiej jakości joysticka, jakiego obecnie brakuje na rynku. Powstał z myślą o tych,
-     którzy cenią sobie klasyczne rozwiązania, ale jednocześnie chcą korzystać z nowoczesnych możliwości.
+<section>
+  <h2>Kontakt i zamówienia</h2>
+  <p>
+    Jeśli jesteś zainteresowany zakupem, proszę o wypełnienie powyższego formularza.<br>
+    Cena joysticka wynosi <strong>420 zł</strong> z wysyłką InPost (Paczkomat).<br>
+    Po przesłaniu wiadomości skontaktuję się z Tobą w celu potwierdzenia dostępności, czasu realizacji oraz szczegółów dotyczących dostawy.
+  </p>
+  <p>
+    W razie pytań możesz skontaktować się ze mną bezpośrednio: <br>
+    <li> email: <a href="mailto:amigajoystick@gmail.com">amigajoystick@gmail.com</a></li>
+    lub 
+    <li>poprzez formularz dostępny poniżej</li>
+  </p>
+  <p style="font-size:14px; color:#aaa;">
+    Zachęcam do kontaktu – odpowiem na wszystkie zgłoszenia jak najszybciej!
   </p>
 
- <p style="max-width: 800px; margin: 20px auto; text-align: justify;">
-     <b>AmiJoy</b> to joystick hybrydowy, który działa zarówno z klasycznymi komputerami <b>Amiga</b> (przez złącze <b>DB9</b>), 
-     jak i z nowoczesnym sprzętem (PC, Raspberry Pi, konsole, itp.) dzięki portowi <b>USB-C</b>. Łączy w sobie klasyczny 
-     feeling, solidną konstrukcję i współczesne standardy, dając użytkownikowi maksimum frajdy i precyzji.
+  <p style="text-align:center;">
+<iframe data-tally-src="https://tally.so/embed/wdrpPy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="216" frameborder="0" marginheight="0" marginwidth="0" title="Zamówienie i pytania"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+</p>
+</section>
+
+
+<section>
+  <div class="photos">
+    <img src="photos/amijoy1.png" alt="AmiJoy">
+    <img src="photos/amijoy2.png" alt="AmiJoy">
+    <img src="photos/amijoy3.png" alt="AmiJoy">
+  </div>
+</section>
+
+<section>
+  <h2>Dlaczego warto wybrać AmiJoy</h2>
+  <p style="text-align:center;">
+    Joystick stworzony z myślą o użytkownikach Amigi – niezawodny, funkcjonalny i łatwy w serwisie.
   </p>
-
-
-
-  <p style="max-width: 800px; margin: 20px auto; text-align: justify;">
-    Jeśli jesteś zainteresowany zakupem, prosimy o wypełnienie powyższego formularza. <br>
-    Cena joysticka wynosi <strong>420 zł</strong> z wysyłką InPost (Paczkomat). 
-    Po przesłaniu wiadomości skontaktujemy się z Tobą w celu potwierdzenia dostępności, czasu realizacji oraz szczegółów dotyczących dostawy. 
-    <br>Zachęcamy do kontaktu – odpowiadamy na wszystkie zgłoszenia tak szybko, jak to możliwe!
+  <ul>
+    <li>Bezproblemowa współpraca z komputerami Amiga</li>
+    <li>Obsługa dwóch przycisków <strong>fire</strong></li>
+    <li>Tryb stałego <strong>autofire</strong> dla przycisku fire 1</li>
+    <li>Tryb <strong>autofire</strong> dla fire 1 pod dedykowanym przyciskiem (czerwony)</li>
+    <li>Tryb <strong>single-fire</strong> – każdy przycisk działa jak fire 1, wyłączona obsługa fire 2</li>
+    <li>Tryb <strong>jump</strong> pod dedykowanym przyciskiem (czarny)</li>
+    <li>Podłączenie do USB dzięki kontrolerowi <strong>GP2040-CE</strong> – tryb XINPUT, kompatybilny z emulatorami i retro konsolami</li>
+    <li>Mocne, przykręcane przyssawki – łatwy montaż i demontaż</li>
+    <li>Składany z powszechnie dostępnych podzespołów – szybki serwis i wymiana części</li>
+    <li>Bez dedykowanych, trudno dostępnych ani awaryjnych części drukowanych 3D – wszystkie elementy łatwo dostępne na rynku</li>
+  </ul>
+  <p>
+    AmiJoy to trwałość i niezawodność w każdym calu – gotowy do użycia od razu po wyjęciu z pudełka, z łatwą możliwością serwisu i konserwacji.
   </p>
+</section>
 
-  <form action="https://formspree.io/f/mnngnzwe" method="POST">
-    <input type="text" name="nick" placeholder="Twój nick" required>
-    <input type="email" name="email" placeholder="Twój e-mail" required>
-    <textarea name="message" rows="4" placeholder="Twoja wiadomość" required></textarea>
-    <button type="submit">Wyślij</button>
-  </form>
+<section>
+  <p>
+    Joystick AmiJoy działa bez problemu z konsolami takimi jak <strong>The A500 Mini</strong>, <strong>The Spectrum</strong> oraz <strong>The 400 Mini</strong> od razu po wyjęciu z pudełka.  
+    Działa także z <strong>The C64 Mini</strong> i <strong>Maxi</strong>, jednak w tym przypadku wymaga drobnej zmiany konfiguracji.  
+    Instrukcję konfiguracji i wideo znajdziesz tutaj:  
+    <a href="https://www.youtube.com/watch?v=NzvOuI-NQTE&list=PLZwRIupELg72KYfDCNkU89hNP5BiiKEJB&index=2" target="_blank">Kliknij, aby obejrzeć film na YouTube</a>.
+  </p>
+  <a href="instrukcja_amijoy.pdf" download class="pdf-link">Pobierz instrukcję PDF</a>
+</section>
 
-  <br>
-  <br>
-  <a href="instrukcja_amijoy.pdf" download style="
-    display: inline-block;
-    padding: 10px 20px;
-    background: #0078d7;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-  ">Pobierz instrukcję PDF</a>
+<section>
+  <h2>Prezentacja wideo</h2>
+  <p style="text-align:center;">Poniżej kilka filmików prezentujących działanie joysticka AmiJoy</p>
+  <div class="iframe-container">
+    <iframe src="https://www.youtube.com/embed/ZNGq2D3Gfag" title="AmiJoy Xtreme Racing Amiga1200 PiStorm" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/mhqMzQxplyw" title="Amijoy the spectrum" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/Ti24QvJxMMQ" title="Amijoy usb a500 mini" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/ozlvHmCgEqI" title="Amijoy retropie mame" allowfullscreen></iframe>
+  </div>
+  <p style="text-align:center; margin-top:15px;">
+    Zobacz więcej filmów na kanale: <br>
+    <a href="https://www.youtube.com/playlist?list=PLZwRIupELg72KYfDCNkU89hNP5BiiKEJB" target="_blank">Kliknij tutaj, aby przejść do playlisty</a>
+  </p>
+</section>
 
-  <br>
-  <br>
+<section>
+  <h2>Opinie innych</h2>
+  <p style="text-align:center;">Zobacz recenzje i testy przygotowane przez youtuberów – opinie z pierwszej ręki, porównania i praktyczne wrażenia.</p>
+  <div class="iframe-container">
+    <iframe src="https://www.youtube.com/embed/Ao0gEXnBbeo" title="Recenzja AmiJoy" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/2p0d0ncxgu0" title="LIVE - Test AmiJoy" allowfullscreen></iframe>
+  </div>
+</section>
 
-  <p style="max-width: 800px; margin: 20px auto; text-align: justify;">
-  Joystick AmiJoy działa bez problemu z konsolami takimi jak <strong>The A500 Mini</strong>, <strong>The Spectrum</strong> oraz <strong>The 400 Mini</strong> od razu po wyciągnięciu z pudełka.  
-  Działa także z <strong>The C64 Mini</strong> i <strong>Maxi</strong>, jednak w tym przypadku wymaga drobnej zmiany konfiguracji joysticka.  
-  Instrukcję konfiguracji oraz szczegółowe wideo znajdziesz tutaj: 
-  <a href="https://www.youtube.com/watch?v=NzvOuI-NQTE&list=PLZwRIupELg72KYfDCNkU89hNP5BiiKEJB&index=2" target="_blank">Kliknij, aby obejrzeć film na YouTube</a>.
-</p>
+<section style="background:rgba(0,40,80,0.7);">
+  <h2>Proces projektowania</h2>
+  <p>
+    Chcesz dowiedzieć się, jak powstawał joystick <strong>AmiJoy</strong>?  
+    Cały proces projektowania i tworzenia jest szczegółowo opisany na forum portalu PPA.  
+    <a href="https://www.ppa.pl/forum/amiga/47898/amijoy-db9-i-usb-joy-2-w-jednym2" target="_blank">Zobacz szczegóły na forum PPA</a>.
+  </p>
+</section>
 
-  <br>
+<footer>
+  © 2025 AmiJoy - marggines
+</footer>
 
-  <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-  Poniżej możesz zobaczyć kilka filmików prezentujących działanie joysticka AmiJoy.  
-</p>
-  <br>
-
-<iframe width="320" 
-        src="https://www.youtube.com/embed/ZNGq2D3Gfag"
-        title="AmiJoy Xtreme Racing Amiga1200 PiStorm"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>
-<iframe width="320" 
-        src="https://www.youtube.com/embed/mhqMzQxplyw"
-        title="Amijoy the spectrum"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>
-<br>
-<iframe width="320" 
-        src="https://www.youtube.com/embed/Ti24QvJxMMQ"
-        title="Amijoy usb a500 mini"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>
-<iframe width="320" 
-        src="https://www.youtube.com/embed/ozlvHmCgEqI"
-        title="Amijoy retropie mame"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>  
-
-  <p style="text-align: center; max-width: 800px; margin: 20px auto;">
-  Zobacz więcej filmów na kanale: <br>
-  <a href="https://www.youtube.com/playlist?list=PLZwRIupELg72KYfDCNkU89hNP5BiiKEJB" target="_blank">
-    Kliknij tutaj, aby przejść do playlisty
-  </a>
-</p>
-
-  <br>
-  <br>
-
-  <p style="text-align: center; max-width: 800px; margin: 20px auto;">
-  Co inni mówią o AmiJoy?<br>
-    Zobacz recenzje i testy przygotowane przez youtuberów – opinie z pierwszej ręki, 
-    <br>porównania i praktyczne wrażenia z użytkowania joysticka.
-</p>
-<br>
-  <iframe width="320" 
-        src="https://www.youtube.com/embed/Ao0gEXnBbeo"
-        title="AMIJOY🔥Nowy hybrydowy joystick do Amigi i nie tylko (db9/usb)"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>
-<iframe width="320" 
-        src="https://www.youtube.com/embed/2p0d0ncxgu0"
-        title="LIVE - Ostre testy AMIJOY'a, Amiga vs C64"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-</iframe>  
-
-    <br>
-  <br>
-
-  <footer>
-    © 2025 AmiJoy
-  </footer>
 </body>
 </html>
